@@ -1,0 +1,8 @@
+<h1>Comedians</h1>
+<% @comedians.each do |comedian| %>
+  <ul id="comedian-<%=comedian.id%>">
+    <li><%= comedian.name %></li>
+    <li><%= comedian.age %></li>
+    <li><%= comedian.city %></li>
+  </ul>
+<% end %>
