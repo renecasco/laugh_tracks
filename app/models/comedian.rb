@@ -3,4 +3,6 @@ class Comedian < ApplicationRecord
   validates :age, presence: true, numericality: {
     only_integer: true,
   }
+
+  has_many :specials
 end
