@@ -1,8 +1,13 @@
 <h1>Comedians</h1>
 <% @comedians.each do |comedian| %>
-  <ul id="comedian-<%=comedian.id%>">
-    <li><%= comedian.name %></li>
-    <li><%= comedian.age %></li>
-    <li><%= comedian.city %></li>
-  </ul>
+  <div id="comedian-<%=comedian.id%>">
+    <p><%= comedian.name %></p>
+    <p><%= comedian.age %></p>
+    <p><%= comedian.city %></p>
+    <% comedian.specials.each do |special| %>
+      <p> <%= special.name %></p>
+      <p>length: <%= special.run_time %> min</p>
+      <img src="<%= special.thumbnail %>" alt="<%= special.name %> image">
+    <% end %>
+  </div>
 <% end %>

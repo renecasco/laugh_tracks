@@ -1,7 +1,5 @@
-Comedian.destroy_all
-Special.destroy_all
 
-richard_prior = Comedian.create(name: "Richard Prior", age: 65, city: "Los Angeles, CA")
+richard_pryor = Comedian.create(name: "Richard Prior", age: 65, city: "Los Angeles, CA")
 george_carlin = Comedian.create(name: "George Carlin", age: 71, city: "Santa Monica, CA")
 joan_rivers = Comedian.create(name: "Joan Rivers", age: 81, city: "New York City, NY")
 robin_williams = Comedian.create(name: "Robin Williams", age: 63, city: "Tiburon, CA")
@@ -14,9 +12,9 @@ dave_chapelle = Comedian.create(name: "Dave Chapelle", age: 45, city: "Washingto
 sarah_silverman = Comedian.create(name: "Sarah Silverman", age: 48, city: "Bedford, NH")
 michelle_wolf = Comedian.create(name: "Michelle Wolf", age: 33, city: "Hershey, PA")
 
-richard_prior.specials.create(name: "Live and Smokin'", run_time: 48, thumbnail: "https://m.media-amazon.com/images/M/MV5BMTkyMDI1OTc2N15BMl5BanBnXkFtZTcwNzgzODEyMQ@@._V1_UY268_CR4,0,182,268_AL_.jpg")
-richard_prior.specials.create(name: "Live in Concert", run_time: 78, thumbnail: "https://m.media-amazon.com/images/M/MV5BMTg4NDkwMzYwNF5BMl5BanBnXkFtZTYwNTMzMTQ5._V1_UY268_CR2,0,182,268_AL_.jpg")
-richard_prior.specials.create(name: "Live on the Sunset Strip", run_time: 88, thumbnail: "https://m.media-amazon.com/images/M/MV5BNTI1MWQ1M2YtMTRjNS00NTlhLThkNzctODk2ZmQ2NmMzN2ViXkEyXkFqcGdeQXVyNzc5MjA3OA@@._V1_UX182_CR0,0,182,268_AL_.jpg")
+richard_pryor.specials.create(name: "Live and Smokin'", run_time: 48, thumbnail: "https://m.media-amazon.com/images/M/MV5BMTkyMDI1OTc2N15BMl5BanBnXkFtZTcwNzgzODEyMQ@@._V1_UY268_CR4,0,182,268_AL_.jpg")
+richard_pryor.specials.create(name: "Live in Concert", run_time: 78, thumbnail: "https://m.media-amazon.com/images/M/MV5BMTg4NDkwMzYwNF5BMl5BanBnXkFtZTYwNTMzMTQ5._V1_UY268_CR2,0,182,268_AL_.jpg")
+richard_pryor.specials.create(name: "Live on the Sunset Strip", run_time: 88, thumbnail: "https://m.media-amazon.com/images/M/MV5BNTI1MWQ1M2YtMTRjNS00NTlhLThkNzctODk2ZmQ2NmMzN2ViXkEyXkFqcGdeQXVyNzc5MjA3OA@@._V1_UX182_CR0,0,182,268_AL_.jpg")
 
 george_carlin.specials.create(name: "Doin' It Again", run_time: 60, thumbnail: "https://m.media-amazon.com/images/M/MV5BMjg4MTYwNjY0NF5BMl5BanBnXkFtZTcwNzg1OTkyMQ@@._V1_UY268_CR5,0,182,268_AL_.jpg")
 george_carlin.specials.create(name: "Jammin' in New York", run_time: 59, thumbnail: "https://m.media-amazon.com/images/M/MV5BMTI2MjA5NjEwOF5BMl5BanBnXkFtZTcwMDYzOTIzMQ@@._V1_UY268_CR3,0,182,268_AL_.jpg")
