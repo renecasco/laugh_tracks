@@ -29,10 +29,10 @@ describe "When a user visits '/comedians'" do
 
     within "#comedian-#{richard_pryor.id}" do
       expect(page).to have_content(special_1.name)
-      expect(page).to have_content(special_1.run_time)
+      expect(page).to have_content("length: #{special_1.run_time} min")
       expect(page).to have_xpath("//img[contains(@src,'#{File.basename(special_1.thumbnail)}')]")
       expect(page).to have_content(special_2.name)
-      expect(page).to have_content(special_2.run_time)
+      expect(page).to have_content("length: #{special_1.run_time} min")
       expect(page).to have_xpath("//img[contains(@src,'#{File.basename(special_2.thumbnail)}')]")
     end
   end
