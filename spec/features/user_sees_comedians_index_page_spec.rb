@@ -19,7 +19,7 @@ describe "When a user visits '/comedians'" do
     end
   end
 
-  it "lets them see a list of each comedian's TV specials' names" do
+  it "lets them see a list of each comedian's TV specials' names, run time, and thumnail" do
     richard_pryor = Comedian.create(name: "Richard Pryor", age: 65, city: "Los Angeles, CA")
 
     special_1 = richard_pryor.specials.create(name: "Live and Smokin'", run_time: 48, thumbnail: "https://m.media-amazon.com/images/M/MV5BMTkyMDI1OTc2N15BMl5BanBnXkFtZTcwNzgzODEyMQ@@._V1_UY268_CR4,0,182,268_AL_.jpg")
@@ -29,7 +29,11 @@ describe "When a user visits '/comedians'" do
 
     within "#comedian-#{richard_pryor.id}" do
       expect(page).to have_content(special_1.name)
+      expect(page).to have_content(special_1.run_time)
+      expect(page).to have_xpath("//img[contains(@src,'#{File.basename(special_1.thumbnail)}')]")
       expect(page).to have_content(special_2.name)
+      expect(page).to have_content(special_2.run_time)
+      expect(page).to have_xpath("//img[contains(@src,'#{File.basename(special_2.thumbnail)}')]")
     end
   end
 end
