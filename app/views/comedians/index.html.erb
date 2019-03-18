@@ -1,4 +1,7 @@
 <h1 class="text-danger" id="page-header">Comedians</h1>
+<section id="statistics">
+  <p>Average Age: <%= @comedians.average_age %> yrs old</p>
+</section>
 <section class="comedians-container">
   <% @comedians.each do |comedian| %>
     <section class="comedian-item" id="comedian-<%=comedian.id%>">

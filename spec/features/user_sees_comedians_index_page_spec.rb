@@ -29,11 +29,25 @@ describe "When a user visits '/comedians'" do
 
     within "#comedian-#{richard_pryor.id}" do
       expect(page).to have_content(special_1.name)
-      expect(page).to have_content("length: #{special_1.run_time} min")
+      expect(page).to have_content("Length: #{special_1.run_time} min")
       expect(page).to have_xpath("//img[contains(@src,'#{File.basename(special_1.thumbnail)}')]")
       expect(page).to have_content(special_2.name)
-      expect(page).to have_content("length: #{special_1.run_time} min")
+      expect(page).to have_content("Length: #{special_1.run_time} min")
       expect(page).to have_xpath("//img[contains(@src,'#{File.basename(special_2.thumbnail)}')]")
     end
   end
+
+  describe "they see an area at the top of the page called 'Statistics'" do
+    it "they see the average age of all comedians on the page" do
+      richard_pryor = Comedian.create(name: "Richard Pryor", age: 65, city: "Los Angeles, CA")
+      george_carlin = Comedian.create(name: "George Carlin", age: 71, city: "Santa Monica, CA")
+
+      visit comedians_path
+
+      within "#statistics" do
+        expect(page).to have_content("Average Age: 68 yrs old")
+      end
+    end
+  end
+
 end
