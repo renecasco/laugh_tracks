@@ -68,6 +68,26 @@ describe "When a user visits '/comedians'" do
         expect(page).to have_content("Average Length for Specials: 63.0 min")
       end
     end
+
+    it "they see a unique list of cities for each comedian on the page" do
+      richard_pryor = Comedian.create(name: "Richard Pryor", age: 65, city: "Los Angeles, CA")
+      eddie_murphy = Comedian.create(name: "Eddie Murphy", age: 57, city: "New York City, NY")
+      jerry_seinfeld = Comedian.create(name: "Jerry Seinfeld", age: 64, city: "New York City, NY")
+      dave_chapelle = Comedian.create(name: "Dave Chapelle", age: 45, city: "Washington, DC")
+      sarah_silverman = Comedian.create(name: "Sarah Silverman", age: 48, city: "Bedford, NH")
+
+      special_1 = richard_pryor.specials.create(name: "Live and Smokin'", run_time: 48, thumbnail: "https://m.media-amazon.com/images/M/MV5BMTkyMDI1OTc2N15BMl5BanBnXkFtZTcwNzgzODEyMQ@@._V1_UY268_CR4,0,182,268_AL_.jpg")
+      special_2 = richard_pryor.specials.create(name: "Live in Concert", run_time: 78, thumbnail: "https://m.media-amazon.com/images/M/MV5BMTg4NDkwMzYwNF5BMl5BanBnXkFtZTYwNTMzMTQ5._V1_UY268_CR2,0,182,268_AL_.jpg")
+
+      visit comedians_path
+
+      within "#statistics" do
+        expect(page).to have_content("Los Angeles, CA")
+        expect(page).to have_content("New York City, NY")
+        expect(page).to have_content("Washington, DC")
+        expect(page).to have_content("Bedford, NH")
+      end
+    end
   end
 
 end

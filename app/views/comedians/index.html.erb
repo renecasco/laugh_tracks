@@ -2,6 +2,15 @@
 <section id="statistics">
   <p class="text-light">Average Comedian Age: <%= @average_age %> yrs old</p>
   <p class="text-light">Average Length for Specials: <%= @average_run_time %> min</p>
+  <section class="dropdown">
+    <p class="dropbtn">Cities</p>
+    <section class="dropdown-content">
+      <% cities = @comedians.distinct.pluck(:city)%>
+      <% cities.each do |city| %>
+        <p><%= city %>
+      <% end %>
+    </section>
+  </section>
 </section>
 <section class="comedians-container">
   <% @comedians.each do |comedian| %>
