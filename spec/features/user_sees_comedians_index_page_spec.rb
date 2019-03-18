@@ -14,11 +14,13 @@ describe "When a user visits '/comedians'" do
       expect(page).to have_content(richard_pryor.name)
       expect(page).to have_content(richard_pryor.age)
       expect(page).to have_content(richard_pryor.city)
+
     end
     within "#comedian-#{george_carlin.id}" do
       expect(page).to have_content(george_carlin.name)
       expect(page).to have_content(george_carlin.age)
       expect(page).to have_content(george_carlin.city)
+
     end
   end
 

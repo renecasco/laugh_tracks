@@ -1,17 +1,23 @@
-<h1 class="text-danger" id="page-header">Comedians</h1>
-<section id="statistics">
-  <p class="text-light">Average Comedian Age: <%= @average_age %> yrs old</p>
-  <p class="text-light">Average Length for Specials: <%= @average_run_time %> min</p>
-  <section class="dropdown">
-    <p class="dropbtn">Cities</p>
-    <section class="dropdown-content">
-      <% cities = @comedians.distinct.pluck(:city)%>
-      <% cities.each do |city| %>
-        <p><%= city %>
-      <% end %>
+<section class="stats-container" id="statistics">
+  <section class="stats-item">
+    <p class="text-light">Average Comedian Age: <%= @average_age %> yrs old</p>
+  </section>
+  <section class="stats-item">
+    <p class="text-light">Average Length for Specials: <%= @average_run_time %> min</p>
+  </section>
+  <section class="stats-item">
+    <section class="dropdown">
+      <p class= "text-light" id="dropbtn">Cities</p>
+      <section class="dropdown-content">
+        <% cities = @comedians.distinct.pluck(:city)%>
+        <% cities.each do |city| %>
+          <p><%= city %>
+        <% end %>
+      </section>
     </section>
   </section>
 </section>
+<h1 class="text-danger" id="page-header">Comedians</h1>
 <section class="comedians-container">
   <% @comedians.each do |comedian| %>
     <section class="comedian-item" id="comedian-<%=comedian.id%>">
