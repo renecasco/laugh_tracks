@@ -11,7 +11,7 @@ h1 {
 
 }
 
-h2{
+h3{
   text-align: center;
 }
 .comedians-container {
@@ -31,7 +31,7 @@ h2{
 }
 
 .text-danger {
-  text-align: left;
+  text-align: center;
 }
 .special-container {
   display: flex;
