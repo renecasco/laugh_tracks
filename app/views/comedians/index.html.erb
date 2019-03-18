@@ -1,13 +1,21 @@
-<h1>Comedians</h1>
-<% @comedians.each do |comedian| %>
-  <div id="comedian-<%=comedian.id%>">
-    <h2><%= comedian.name %></h2>
-    <p>Age: <%= comedian.age %></p>
-    <p>City: <%= comedian.city %></p>
-    <% comedian.specials.each do |special| %>
-      <p> <%= special.name %></p>
-      <p>length: <%= special.run_time %> min</p>
-      <img src="<%= special.thumbnail %>" alt="<%= special.name %> image">
-    <% end %>
-  </div>
-<% end %>
+<h1 class="text-danger" id="page-header">Laugh Tracks</h1>
+<section class="comedians-container">
+  <% @comedians.each do |comedian| %>
+    <section class="comedian-item" id="comedian-<%=comedian.id%>">
+      <h2 class="p-3 mb-2 bg-dark text-light"><%= comedian.name %></h2>
+      <p class="text-danger">Age: <%= comedian.age %></p>
+      <p class="text-danger">City: <%= comedian.city %></p>
+      <% comedian.specials.each do |special| %>
+        <section class="special-container">
+          <section class="special-item">
+            <img class="thumbnail" src="<%= special.thumbnail %>" alt="<%= special.name %> image">
+          </section>
+          <section class="special-item" id="special-info">
+            <p class="text-light"> <%= special.name %></p>
+            <p class="text-light">Length: <%= special.run_time %> min</p>
+          </section>
+        </section>
+      <% end %>
+    </section>
+  <% end %>
+</section>

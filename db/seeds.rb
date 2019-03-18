@@ -1,5 +1,5 @@
 
-richard_pryor = Comedian.create(name: "Richard Prior", age: 65, city: "Los Angeles, CA")
+richard_pryor = Comedian.create(name: "Richard Pryor", age: 65, city: "Los Angeles, CA")
 george_carlin = Comedian.create(name: "George Carlin", age: 71, city: "Santa Monica, CA")
 joan_rivers = Comedian.create(name: "Joan Rivers", age: 81, city: "New York City, NY")
 robin_williams = Comedian.create(name: "Robin Williams", age: 63, city: "Tiburon, CA")

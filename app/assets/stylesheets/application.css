@@ -1,15 +1,53 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body {
+  background-image: url("http://paperlief.com/images/microphone-on-stage-wallpaper-3.jpg");
+}
+
+h1 {
+  display: flex;
+  justify-content: left;
+  font-weight: bolder;
+  margin: 20px;
+  padding-top: 40px;
+
+}
+
+h2{
+  text-align: center;
+}
+.comedians-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+
+.comedian-item {
+  flex: 20%;
+  border: 1px solid gray;
+  padding: 10px;
+  margin: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  align-items: left;
+}
+
+.text-danger {
+  text-align: left;
+}
+.special-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.special-item {
+  margin: 5px;
+  text-align: left;
+}
+
+#special-info {
+  margin-left: 10px;
+}
+
+.thumbnail {
+  width: 60px;
+}
